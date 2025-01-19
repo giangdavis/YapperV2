@@ -12,9 +12,6 @@ const FileOptions FILE_OPTIONS = FileOptions.WriteThrough | FileOptions.Asynchro
 
 string filePath = configuration["FileSettings:FilePath"];
 
-// Create directory if it doesn't exist
-Directory.CreateDirectory(Path.GetDirectoryName(filePath)!);
-
 // Create/truncate the log file with optimized settings 
 using var fileStream = new FileStream(
    filePath,
